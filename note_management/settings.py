@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "notes_app",
     "rest_framework",
     "rest_framework.authtoken",
+    "rest_framework_simplejwt.token_blacklist",
+  
 
 ]
 REST_FRAMEWORK={
