@@ -1,0 +1,115 @@
+###
+POST http://127.0.0.1:8000/api/register/
+Content-Type: application/json
+
+{
+    "username":"ardra",
+    "email":"ardra@gmail.com",
+    "password":"ardra@12345"
+
+}
+
+###
+POST  http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username":"ardra",
+    "password":"ardra@12345"
+}
+
+###
+GET  http://127.0.0.1:8000/api/notes/
+Authorization:Token e0977401d44c5e363c1b75a7d070556ccbde3103
+
+
+###
+POST http://127.0.0.1:8000/api/notes/
+Authorization: Token 3c8fad0b6dc9ef9fee940534806b7d18a3fd3238
+Content-Type: application/json
+
+{
+    "title": "Java Notes",
+    "description": "Learning java  Framework"
+}
+
+###
+GET http://127.0.0.1:8000/api/notes/1/
+Authorization: Token e0977401d44c5e363c1b75a7d070556ccbde3103
+
+###
+PUT http://127.0.0.1:8000/api/notes/1/
+Authorization: Token e0977401d44c5e363c1b75a7d070556ccbde3103
+Content-Type: application/json
+
+{
+    "title": "Django REST API",
+    "description": "Learning CRUD operations"
+}
+
+###
+DELETE http://127.0.0.1:8000/api/notes/3/
+Authorization: Token 3c8fad0b6dc9ef9fee940534806b7d18a3fd3238
+
+#logout the users token
+###
+POST http://127.0.0.1:8000/api/logout/
+Content-Type: application/json
+Authorization: Token e0977401d44c5e363c1b75a7d070556ccbde3103
+
+
+###
+POST http://127.0.0.1:8000/api/jwt_login/
+content-type:application/json
+
+{
+    "username":"ardra",
+    "password":"ardra@12345"
+}
+
+
+###
+GET http://127.0.0.1:8000/api/tasks/
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTYyNjgwLCJpYXQiOjE3OTUxNjIzODAsImp0aSI6ImU3OTM3NjQ2MjA2OTQ1MDU4MmZmMGNhMGYxODUzZWM0IiwidXNlcl9pZCI6IjYifQ.BfzbI86ZjrTZTxf4rBxIA_f_0Jgy29Xa5eqCZ62gcqs
+
+###
+POST http://127.0.0.1:8000/api/tasks/
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTYyNjgwLCJpYXQiOjE3OTUxNjIzODAsImp0aSI6ImU3OTM3NjQ2MjA2OTQ1MDU4MmZmMGNhMGYxODUzZWM0IiwidXNlcl9pZCI6IjYifQ.BfzbI86ZjrTZTxf4rBxIA_f_0Jgy29Xa5eqCZ62gcqs
+Content-Type: application/json
+
+{
+    "title": "Complete Django project",
+    "description": "Finish Task Management API",
+    "due_date": "2026-11-25",
+    "status": "pending"
+}
+
+###
+POST http://127.0.0.1:8000/api/refresh/
+Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTYyOTA0LCJpYXQiOjE3OTUxNjI2MDQsImp0aSI6IjgwNjBkZDBlNjUwZTRmNGZhOWFhMjAyMmJjN2NmMzFmIiwidXNlcl9pZCI6IjYifQ.jjdtdHbew9evNCHcBujecFO3IqO_rrWQ2ciBXflQcjw
+
+{
+    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NTI0OTAzNSwiaWF0IjoxNzk1MTYyNjM1LCJqdGkiOiJjMjM5MzE5YTJiOWI0YWUwYjFiODIyYjNmMDE3MzNjNSIsInVzZXJfaWQiOiI2In0.kHn-4frzYcXdgWfC20qvlVBQ7YYjxybBy5SjsVGWCpw"
+}
+
+###
+GET http://127.0.0.1:8000/api/tasks/1/
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTYzNzg4LCJpYXQiOjE3OTUxNjM0ODgsImp0aSI6IjliNDMxN2ViNGFiZDQxOTA5NmRlNWRiMzM5YTU5OWI0IiwidXNlcl9pZCI6IjYifQ.0KwbgSz2UKWSjAtYWVvsSGbXTjcfLGVw8ngusj5RabE
+
+###
+PUT http://127.0.0.1:8000/api/tasks/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTYzODc5LCJpYXQiOjE3OTUxNjM1NzksImp0aSI6IjlkMTM3ZmYxOGE5ODQ2Y2I4NGQ3NDk1NmIwYTRlZDE3IiwidXNlcl9pZCI6IjYifQ.dBdxdv_8N9jBJMxb4lwU35JjFvab78-OHdYPep3soYM
+Content-Type: application/json
+
+{
+    "title": "Updated Django Task",
+    "description": "Complete Task Management API and practice JWT authentication",
+    "due_date": "2026-11-28",
+    "status": "in_progress"
+}
+
+
+###
+DELETE http://127.0.0.1:8000/api/tasks/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTY0OTY3LCJpYXQiOjE3OTUxNjQ2NjgsImp0aSI6ImVkMzE1ZDllYTY3YjQwMGViYzc0YjFhZDYzZTQ5ODcwIiwidXNlcl9pZCI6IjYifQ.PMPKKjvXAyf12ZwgWeaVE5PCG7Nb_DVy1aPIZB9uQj0
